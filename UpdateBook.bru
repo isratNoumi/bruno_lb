@@ -5,7 +5,23 @@ meta {
 }
 
 put {
-  url: http://localhost:8088/Books
-  body: none
+  url: http://localhost:8088/Books/:id
+  body: json
   auth: inherit
+}
+
+params:path {
+  id: 8
+}
+
+body:json {
+  {
+    "title": "The Python Programming Language",
+    "author": "Alan Donovan",
+    "genre_id": 1,
+    "total_copies": 5,
+    "available_copies": 5,
+    "allowed_outside_premises":true,
+    "unit_price": 250
+  }
 }
